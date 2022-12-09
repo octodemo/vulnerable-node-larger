@@ -12,18 +12,17 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    # The branches below must be a subset of the branches above
-    branches: [ main ]
-  schedule:
-    - cron: '19 0 * * 2'
-
+  workflow_call:
+    inputs:
+      runs-on:
+        default: 'ubuntu-latest'
+        required: false
+        type: string
+      
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runs-on }}
     permissions:
       actions: read
       contents: read
