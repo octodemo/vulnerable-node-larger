@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: "CodeQL Larger Runners"
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     name: codeql
     strategy:
       matrix:
-        runs-on: ['larger-64', 'larger-32', 'larger-16', 'larger-8', 'larger-64']
+        runs-on: ['larger-64', 'larger-32', 'larger-16', 'larger-8', 'larger-4']
     uses: ./.github/workflows/codeql-analysis.yml
     with:
       runs-on: ${{ matrix.runs-on }}
