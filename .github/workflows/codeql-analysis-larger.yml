@@ -8,8 +8,7 @@ on:
     branches: [ main ]
   schedule:
     - cron: '19 0 * * 2'
-    
-    
+
 jobs:
   codeql:
     name: codeql
